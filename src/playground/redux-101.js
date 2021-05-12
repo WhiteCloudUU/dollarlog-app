@@ -18,14 +18,13 @@ const decrementCount = ({ decrementBy = 1 } = {}) => {
 const store = createStore((state = {count : 0}, action) => {
     switch (action.type) {
         case "INCREMENT":
-            const incrementBy = typeof action.incrementBy === 'number' ? action.incrementBy : 1;
             return { 
-                count: state.count + incrementBy
+                count: state.count + action.incrementBy
             };
 
         case "DECREMENT":
             return { 
-                count: state.count - 1 
+                count: state.count - action.decrementBy
             };
 
         case "RESET":
@@ -42,7 +41,6 @@ console.log(store.getState());
 
 store.dispatch(incrementCount({ incrementBy: 100 }))
 store.dispatch(incrementCount())
-
 store.dispatch(decrementCount())
 // store.dispatch({type: "RESET"})
 console.log(store.getState());
