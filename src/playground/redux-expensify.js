@@ -133,7 +133,7 @@ const filterReducer = (state = filterDefaultState, action) => {
     }
 };
 
-/* Filter redux store */
+/* Select redux store */
 const getVisibleExpenses = (expenses, { text, sortBy, startDate, endDate}) => {
     return expenses.filter((expense) => {
         const startDateMatch = typeof startDate !== 'number' || expense.createdAt >= startDate; 
@@ -162,7 +162,7 @@ store.subscribe(() => {
     const state = store.getState()
     const visibleExpenses = getVisibleExpenses(state.expenses, state.filters);
     console.log(visibleExpenses);
-})
+});
 
 // Test cases
 const expenseOne = store.dispatch(addExpense({ description: "coffee", amount: 525, createdAt: 150}));
