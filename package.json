@@ -5,11 +5,10 @@
   "author": "Andrew Mead",
   "license": "MIT",
   "scripts": {
-    "serve": "live-server public/",
     "build:dev": "webpack",
+    "start": "node server/server.js",
     "build:prod": "webpack -p --env production",
     "dev-server": "webpack-dev-server",
-    "start": "node server/server.js",
     "heroku-postbuild": "npm run build:prod"
   },
   "dependencies": {
@@ -23,7 +22,6 @@
     "css-loader": "0.28.4",
     "express": "^4.15.4",
     "extract-text-webpack-plugin": "^3.0.0",
-    "live-server": "^1.2.0",
     "moment": "^2.18.1",
     "node-sass": "^5.0.0",
     "normalize.css": "7.0.0",
@@ -41,5 +39,8 @@
     "validator": "8.0.0",
     "webpack": "3.1.0",
     "webpack-dev-server": "2.5.1"
+  },
+  "devDependencies": {
+    
   }
 }
