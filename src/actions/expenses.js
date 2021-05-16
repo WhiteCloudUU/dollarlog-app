@@ -1,25 +1,37 @@
 import uuid from 'uuid'
+import database from '../firebase/firebase'
 
-/* Expenses action generators */
-export const addExpense = (
-    {
+// Add expense
+export const addExpense = (expense) => {
+    return {
+        type: "ADD_EXPENSE",
+        expense
+    };
+};
+
+export const startAddExpense = (expenseData = {}) => {
+    const {
         description = "",
         note = "",
         amount = 0,
         createdAt = 0
-    } = {}
-) => {
-    return {
-        type: "ADD_EXPENSE",
-        expense: {
-            id: uuid(),
-            description,
-            note,
-            amount,
-            createdAt
-        }
-    };
-};
+    } = expenseData;
+    const expense = { description, note, amount, createdAt }
+
+    return (dispatch) => {
+        database.ref('expenses').push(expense)
+            .then((ref) => {
+                dispatch(addExpense({
+                    id: ref.key,
+                    ...expense
+                }));
+            })
+    }
+}
+
+
+
+// Remove expense
 
 export const removeExpense = (id) => {
     return {
