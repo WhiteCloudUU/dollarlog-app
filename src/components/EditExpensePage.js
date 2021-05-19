@@ -9,7 +9,7 @@ const EditExpensePage = (props) => (
             expense={props.expense}
             onSubmit={(expense) => {
                 props.startEditExpense(props.expense.id, expense);
-                props.history.push('/');
+                props.history.push('/dashboard');
             }}
         />
 
