@@ -64,7 +64,7 @@ export default class ExpenseForm extends React.Component {
   render() {
     return (
       
-        <form onSubmit={this.onFormSubmit} className="form">
+        <form className="form" onSubmit={this.onFormSubmit}>
 
           {this.state.error && <p className="form__error">{this.state.error}</p>}
 
@@ -103,7 +103,7 @@ export default class ExpenseForm extends React.Component {
           </textarea>
 
           <div>
-            <button className="button">Add Expense</button>
+            <button className="button">Save Expense</button>
           </div>
 
         </form>

@@ -3,7 +3,6 @@ import moment from 'moment';
 import numeral from 'numeral';
 import { Link } from 'react-router-dom';
 
-
 const ExpenseListItem = ({ id, description, createdAt, amount }) => (
 
     <Link className="list-item" to={`/edit/${id}`}>

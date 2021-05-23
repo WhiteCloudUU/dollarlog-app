@@ -8,7 +8,9 @@ export const LoginPage = ({ startLogin }) => (
             <h1 className="box-layout__title">
                 Dollar Log
             </h1>
-            <p>Save your money for next bitcoin plunge.</p>
+
+            <p>Save your money for next Bitcoin plunge.</p>
+
             <button 
                 onClick={startLogin}
                 className="button"

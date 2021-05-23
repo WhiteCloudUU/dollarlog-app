@@ -11,9 +11,9 @@ export default (expenses, { text, sortBy, startDate, endDate}) => {
         return startDateMatch && endDateMatch && textMatch;
     }).sort((a, b) => {
         if (sortBy === "date") {
-            return a.createdAt < b.createdAt ? 1 : -1;// The most recent expense goes top
+            return a.createdAt < b.createdAt ? 1 : -1; // The most recent expense goes first
         } else if (sortBy === "amount") {
-            return a.amount < b.amount ? 1 : -1; // The larger expense goes top
+            return a.amount < b.amount ? 1 : -1; // The larger expense goes first
         }
     });
 };

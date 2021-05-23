@@ -3,7 +3,6 @@ import ExpenseList from './ExpenseList';
 import ExpenseListFilters from './ExpenseListFilters';
 import ExpenseSummary from './ExpenseSummary';
 
-
 const ExpenseDashboardPage = () => (
     <div>
         <ExpenseSummary />
